@@ -1,4 +1,4 @@
-# PROBLEM Solver (PROton-imaged B-field nonLinear Extraction Module)
+ # PROBLEM Solver (PROton-imaged B-field nonLinear Extraction Module)
 
 The PROBLEM Solver is an open source Python implementation of the proton
 radiography reconstruction algorithm of Bott et al. (2017) <sup>1</sup>. 

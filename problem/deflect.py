@@ -41,6 +41,7 @@ def reconstruct(ri, li, rs, v, x, y, phix, phiy):
     
     # We multiply the whole expression by magnify to put the perp-deflection
     # fields into screen coordinates.
+    
     wBx = magnify*(v/rs)*(map_pot_x - plasma_x)
     wBy = magnify*(v/rs)*(map_pot_y - plasma_y)
     

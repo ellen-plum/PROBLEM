@@ -7,7 +7,6 @@ import numpy as np
 import scipy as sp
 import scipy.interpolate
 import os.path
-import matplotlib.pyplot as plt
 
 def setup(ri, li, rs, dxS, image, mask):
     """
@@ -240,7 +239,6 @@ def solve(X, Y, flux0, flux, dt, tol,
             timestep = start_step + timestep + 1
 
         print(timestep)
-        print(phin)
 
         # Test whether algorithm is stable
         if nan_exception and np.any(np.isnan(phin)):
@@ -303,24 +301,6 @@ def solve(X, Y, flux0, flux, dt, tol,
         # we are assuming the protons are doing outside of the interaction
         # region.
         fluxn = flux_interp((phix,phiy))
-        
-        """print("PRINTING flux to file...")
-        fig = plt.figure(figsize=(6, 3.2))
-
-        ax = fig.add_subplot(111)
-        ax.set_title('colorMap')
-        plt.imshow(flux0)
-        plt.colorbar(orientation='vertical')
-        plt.savefig('flux0.png')
-        fig = plt.figure(figsize=(6, 3.2))
-
-        ax = fig.add_subplot(111)
-        ax.set_title('colorMap')
-        plt.imshow(flux)
-        plt.colorbar(orientation='vertical')
-        plt.savefig('flux_curr.png')
-        print("TOTAL FLUX0: " + str( np.sum( flux0 ) ) )
-        print("TOTAL FLUX : " +str( np.sum( flux ) ) )"""
 
         # Calculate derivative quantity.
         # TODO @usualgaussnumber's code had absolute det? Not sure why. This is
